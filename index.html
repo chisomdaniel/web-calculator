@@ -140,54 +140,54 @@
           <button class="type">Converter</button>
         </div>
         <div class="text-area p-8 flex flex-col gap-2">
+          <div class="result" id="result">0</div>
           <input
             type="text"
             id="expression"
             name="expression-field"
-            placeholder="12,450 + (450 x 12)"
+            value="0"
             class="expression"
           />
-          <div class="result">17,850</div>
         </div>
 
-        <div class="keypad">
-          <button aria-label="keypad" class="key">AC</button>
-          <button aria-label="keypad" class="key">()</button>
-          <button aria-label="keypad" class="key">%</button>
-          <button aria-label="keypad" class="key">÷</button>
-          <button aria-label="keypad" class="key">7</button>
-          <button aria-label="keypad" class="key">8</button>
-          <button aria-label="keypad" class="key">9</button>
-          <button aria-label="keypad" class="key">x</button>
-          <button aria-label="keypad" class="key">4</button>
-          <button aria-label="keypad" class="key">5</button>
-          <button aria-label="keypad" class="key">6</button>
-          <button aria-label="keypad" class="key">-</button>
-          <button aria-label="keypad" class="key">1</button>
-          <button aria-label="keypad" class="key">2</button>
-          <button aria-label="keypad" class="key">3</button>
-          <button aria-label="keypad" class="key">+</button>
-          <button aria-label="keypad" class="key zero">0</button>
-          <button aria-label="keypad" class="key">.</button>
-          <button aria-label="keypad" class="key delete">xx</button>
-          <button aria-label="keypad" class="key equal">=</button>
+        <div aria-label="keypad" class="keypad" id="keypad">
+          <button type="button" value="ac" class="key">AC</button>
+          <button type="button" value="()" class="key">()</button>
+          <button type="button" value="%" class="key">%</button>
+          <button type="button" value="÷" class="key">÷</button>
+          <button type="button" value="7" class="key">7</button>
+          <button type="button" value="8" class="key">8</button>
+          <button type="button" value="9" class="key">9</button>
+          <button type="button" value="x" class="key">x</button>
+          <button type="button" value="4" class="key">4</button>
+          <button type="button" value="5" class="key">5</button>
+          <button type="button" value="6" class="key">6</button>
+          <button type="button" value="-" class="key">-</button>
+          <button type="button" value="1" class="key">1</button>
+          <button type="button" value="2" class="key">2</button>
+          <button type="button" value="3" class="key">3</button>
+          <button type="button" value="+" class="key">+</button>
+          <button type="button" value="0" class="key zero">0</button>
+          <button type="button" value="." class="key">.</button>
+          <button type="button" value="delete" class="key delete">xx</button>
+          <button type="button" value="equal" class="key equal">=</button>
         </div>
 
         <hr />
 
         <div class="advanced">
           <h3>ADVANCED FUNCTIONS</h3>
-          <div class="advanced-keypad">
-            <button aria-label="keypad" class="key">sin</button>
-            <button aria-label="keypad" class="key">cos</button>
-            <button aria-label="keypad" class="key">tan</button>
-            <button aria-label="keypad" class="key">log</button>
-            <button aria-label="keypad" class="key">ln</button>
-            <button aria-label="keypad" class="key">x²</button>
-            <button aria-label="keypad" class="key">x3</button>
-            <button aria-label="keypad" class="key">xy</button>
-            <button aria-label="keypad" class="key">/</button>
-            <button aria-label="keypad" class="key">o</button>
+          <div aria-label="keypad" class="advanced-keypad">
+            <button type="button" value="sin" class="key">sin</button>
+            <button type="button" value="cos" class="key">cos</button>
+            <button type="button" value="tan" class="key">tan</button>
+            <button type="button" value="log" class="key">log</button>
+            <button type="button" value="ln" class="key">ln</button>
+            <button type="button" value="x²" class="key">x²</button>
+            <button type="button" value="x^3" class="key">x3</button>
+            <button type="button" value="x^y" class="key">xy</button>
+            <button type="button" value="/" class="key">/</button>
+            <button type="button" value="o" class="key">o</button>
           </div>
         </div>
       </section>
@@ -264,11 +264,28 @@
           <a href="#">Learn more</a>
         </section>
       </aside>
-      <p>
-        Press <span>shift</span> + <span>s</span> to toggle Scientific Mode
-        quickly.
-      </p>
+      <div class="flex items-center justify-center tool-tip">
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 15 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.75 11.25H8.25V6.75H6.75V11.25ZM7.5 5.25C7.7125 5.25 7.89062 5.17813 8.03438 5.03438C8.17813 4.89062 8.25 4.7125 8.25 4.5C8.25 4.2875 8.17813 4.10938 8.03438 3.96563C7.89062 3.82188 7.7125 3.75 7.5 3.75C7.2875 3.75 7.10938 3.82188 6.96562 3.96563C6.82187 4.10938 6.75 4.2875 6.75 4.5C6.75 4.7125 6.82187 4.89062 6.96562 5.03438C7.10938 5.17813 7.2875 5.25 7.5 5.25ZM7.5 15C6.4625 15 5.4875 14.8031 4.575 14.4094C3.6625 14.0156 2.86875 13.4812 2.19375 12.8062C1.51875 12.1312 0.984375 11.3375 0.590625 10.425C0.196875 9.5125 0 8.5375 0 7.5C0 6.4625 0.196875 5.4875 0.590625 4.575C0.984375 3.6625 1.51875 2.86875 2.19375 2.19375C2.86875 1.51875 3.6625 0.984375 4.575 0.590625C5.4875 0.196875 6.4625 0 7.5 0C8.5375 0 9.5125 0.196875 10.425 0.590625C11.3375 0.984375 12.1312 1.51875 12.8062 2.19375C13.4812 2.86875 14.0156 3.6625 14.4094 4.575C14.8031 5.4875 15 6.4625 15 7.5C15 8.5375 14.8031 9.5125 14.4094 10.425C14.0156 11.3375 13.4812 12.1312 12.8062 12.8062C12.1312 13.4812 11.3375 14.0156 10.425 14.4094C9.5125 14.8031 8.5375 15 7.5 15ZM7.5 13.5C9.175 13.5 10.5938 12.9188 11.7563 11.7563C12.9188 10.5938 13.5 9.175 13.5 7.5C13.5 5.825 12.9188 4.40625 11.7563 3.24375C10.5938 2.08125 9.175 1.5 7.5 1.5C5.825 1.5 4.40625 2.08125 3.24375 3.24375C2.08125 4.40625 1.5 5.825 1.5 7.5C1.5 9.175 2.08125 10.5938 3.24375 11.7563C4.40625 12.9188 5.825 13.5 7.5 13.5Z"
+            fill="#94A3B8"
+          />
+        </svg>
+        <p>
+          Press <span>shift</span> + <span>s</span> to toggle Scientific Mode
+          quickly.
+        </p>
+      </div>
     </main>
-    <footer></footer>
+    <footer>
+      <span class="footer-logo">CalcPremium</span>
+    </footer>
+    <script type="module" src="dist/index.js"></script>
   </body>
 </html>
