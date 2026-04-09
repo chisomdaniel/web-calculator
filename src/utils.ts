@@ -61,4 +61,8 @@ export function renderHistory(historyList: History[]) {
 
   historyItem.addEventListener("click", () => activeHistory(historyItem));
   historytab.appendChild(historyItem);
+
+  if (HISTORY.length > 3) {
+    historytab.classList.remove("no-scrollbar");
+  }
 }

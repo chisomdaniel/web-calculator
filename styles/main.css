@@ -26,6 +26,15 @@ main {
   }
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .history {
   h4 {
     color: var(--muted-foreground);
@@ -55,6 +64,9 @@ main {
   }
 
   .history-items {
+    max-height: 242px;
+    overflow-y: scroll;
+
     div {
       padding: var(--space-3);
       border-radius: var(--space-4);

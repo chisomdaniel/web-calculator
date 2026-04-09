@@ -49,5 +49,8 @@ export function renderHistory(historyList) {
     historyItem.append(h4, p);
     historyItem.addEventListener("click", () => activeHistory(historyItem));
     historytab.appendChild(historyItem);
+    if (HISTORY.length > 3) {
+        historytab.classList.remove("no-scrollbar");
+    }
 }
 //# sourceMappingURL=utils.js.map
